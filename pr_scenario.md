@@ -18,4 +18,13 @@ The code you provide can effect the performance of the project if it becomes too
 
 // Flowchart of iterative development process<br>
 
-Got the feedback -> Thn
+Got the feedback -> Think the code process again -> change the logic of the code -> test the newly changed code -> create the pull request -> review by other team members
+
+<h2>#Resolving Merge Conflicts (Scenario)</h2>
+
+<p>I created two branches A and B to demonstrate the merge conflict</p>
+<ol>
+<li>In branchA, there is an app.js file with some code</li>
+<li>In branchB, there is an app.js file with some code, but here I add some extra code different from branch A</li>
+
+</ol>
