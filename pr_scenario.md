@@ -18,4 +18,4 @@ The code you provide can effect the performance of the project if it becomes too
 
 // Flowchart of iterative development process<br>
 
-Got the feedback -> Thn
+Got the feedback -> Think the code process again -> change the logic of the code -> test the newly changed code -> create the pull request -> review by other team members
