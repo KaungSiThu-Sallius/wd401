@@ -34,3 +34,13 @@ Got the feedback -> Think the code process again -> change the logic of the code
 </ol>
 
 <img src="problem3.png">
+
+<h2>#CI/CD Integration</h2>
+
+<p>In nodeJS project for CI/CD integration we usually node modules like Jest, Husky, lint-staged and eslint for automated tests and quality checks.</p>
+
+<p>Below screenshot is implementing pre-commit hook for automated tests</p>
+
+<img src="problem4.png">
+
+<p>If I have any potential issue, I would first make understand the issue and then try a alternatie approach, get help form online communities like stackoverflow and use AI tools like chatgpt.</p>
