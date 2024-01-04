@@ -1,0 +1,5 @@
+{
+    "imports": {
+    "axios": "https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.3/axios.min.js"
+    }
+}
