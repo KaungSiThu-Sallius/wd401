@@ -2,7 +2,7 @@
 
 <p>Firstly we install webpack-cli with npm. After that webpack.config.json will generated. After that to handle HTML, CSS and Images, we install the following plugins with npm. (html-webpack-plugin, css-loader, mini-css-extract-plugin)</p>
 <p>// Code snippet<br></p>
-<p>
+<code>
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -45,7 +45,7 @@ config.mode = 'production';
 
 };
 
-</p>
+</code>
 
 <h2>#Advanced Bundling Techniques</h2>
 
