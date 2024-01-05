@@ -46,54 +46,49 @@ const config = {
 
 <p>To demonstrate this, I created two files, printHello.js and printWorld.js</p>
 <p>In printHello.js file, I add the following code</p>
-<p>
+<code>
     export default function loadModuleA() {
         console.log('Hello');
     }
-</p>
+</code>
 <p>In printWorld.js file, I add the following code</p>
-<p>
+<code>
     export default function loadModuleB() {
         console.log('World');
     }
-</p>
+</code>
 <p>Then, in index.js file, I add the following code. To load the above two modules when user is clicking buttons with ids - load-hello-module,load-world-module respectively. In that case, the modules is only loaded only when the user is clicked the button. </p>
-<p>
+<code>
 const helloButton = document.getElementById('load-hello-module');
 const WroldButton = document.getElementById('load-world-module');
-
 helloButton.addEventListener('click', () => {
-import('./printHello')
-.then((printHello) => {
-printHello.default();
-})
-.catch((error) => {
-console.error('Error loading module PrintHello:', error);
+    import('./printHello')
+    .then((printHello) => {
+        printHello.default();
+    })
+    .catch((error) => {
+        console.error('Error loading module PrintHello:', error);
+    });
 });
-});
-
 helloButton.addEventListener('click', () => {
-import('./printWorld')
-.then((printWorld) => {
-printWorld.default();
-})
-.catch((error) => {
-console.error('Error loading module PrintWorld:', error);
+    import('./printWorld')
+    .then((printWorld) => {
+        printWorld.default();
+    })
+    .catch((error) => {
+        console.error('Error loading module PrintWorld:', error);
+    });
 });
-});
+</code>
 
-</p>
-
-<p>We can also configure webpack to split chunks for better caching and optimization. It generates separate files for common dependencies shared between modules. </p>
-<p>
-Example:
-<br>
+<p>We can also configure webpack to split chunks for better caching and optimization. It generates separate files for common dependencies shared between modules. Example:</p>
+<code>
     optimization: {
         splitChunks: {
             chunks: 'all',
         },
     },
-</p>
+</code>
 
 <p>
 In the index.js file, when the buttons are clicked, we use dynamic imports (import()) to load helloModule and worldModule. Webpack detects these dynamic imports and generates separate chunks for each module.
@@ -118,12 +113,14 @@ Modules are loaded when the buttons are clicked, allowing users to interact with
 <h4>Implementing Import Maps</h4>
 <ol>
 <li>First, we create import-map.json file.</li>
-<li>In import-map.json file, we write the following code, which map the axios modules with its axios and its actual URL <br>
+<li>In import-map.json file, we write the following code, which map the axios modules with its axios and its actual URL 
+<code>
 {
     "imports": {
     "axios": "https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.3/axios.min.js"
     }
 }
+</code>
 </li>
 <li>
 In html file, we link the import-map.json file - < script type="import-map" src="import-map.json"></>
@@ -142,10 +139,8 @@ In html file, we link the import-map.json file - < script type="import-map" src=
 <code>
     <script type="module">
         import dayjs from "https://cdn.skypack.dev/dayjs@1.10.7";
-
         console.log(dayjs('2024-01-05').format('YYYY-MM-DD'));
     </script>
-
 </code>
 
 <p>In index.html (After using Import Map), we just have use the name in script tag.</p>
@@ -159,8 +154,6 @@ In html file, we link the import-map.json file - < script type="import-map" src=
     </script>
     <script type="module">
         import dayjs from "dayjs";
-
         console.log(dayjs('2024-01-05').format('YYYY-MM-DD'));
     </script>
-
 </code>
