@@ -145,29 +145,29 @@ In html file, we link the import-map.json file - < script type="import-map" src=
 </ol>
 
 <h4>The refactor of an existing project to use import maps for JS modules</h4>
-<p>index.html (Before using Import Map)</p>
+<p>In index.html (Before using Import Map), we have write actual url in script tag.</p>
 <code>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <title>Webpack App</title>
-</head>
-
-<body>
-    <h1>WD 401</h1>
-
-    <button id="load-hello-module">Load Hello Module</button>
-    <button id="load-world-module">Load World Module</button>
-
-    <script src="src/index.js"></script>
     <script type="module">
         import dayjs from "https://cdn.skypack.dev/dayjs@1.10.7";
 
         console.log(dayjs('2024-01-05').format('YYYY-MM-DD'));
     </script>
 
-</body>
-</html>
+</code>
+
+<p>In index.html (After using Import Map), we just have use the name in script tag.</p>
+<code>
+    <script type="importmap">
+    {
+    "imports": {
+        "dayjs": "https://cdn.skypack.dev/dayjs@1.10.7",
+    }
+    }
+    </script>
+    <script type="module">
+        import dayjs from "dayjs";
+
+        console.log(dayjs('2024-01-05').format('YYYY-MM-DD'));
+    </script>
+
 </code>
