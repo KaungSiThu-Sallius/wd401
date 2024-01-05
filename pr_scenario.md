@@ -1,6 +1,7 @@
 <h2>#Handling Code Review Feedback</h2>
 
-// Code snippet<br>
+// Code snippet
+<code>
 class Product {
 constructor(name, price, quantity) {
 this.name = name;
@@ -8,34 +9,30 @@ this.price = price;
 this.quantity = quantity;
 }
 }
-
 class ShoppingCart {
 constructor() {
 this.products = [];
 }
-
-    addProduct(product) {
-        this.products.push(product);
-    }
-
-    removeProduct(product) {
-        const index = this.products.indexOf(product);
-        if (index !== -1) {
-            this.products.splice(index, 1);
-        } else {
-            console.log("Product not found in the shopping cart.");
-        }
-    }
-
-    calculateTotalPrice() {
-        let totalPrice = 0;
-        this.products.forEach(product => {
-            totalPrice += product.price * product.quantity;
-        });
-        return totalPrice;
-    }
-
+addProduct(product) {
+this.products.push(product);
 }
+removeProduct(product) {
+const index = this.products.indexOf(product);
+if (index !== -1) {
+this.products.splice(index, 1);
+} else {
+console.log("Product not found in the shopping cart.");
+}
+}
+calculateTotalPrice() {
+let totalPrice = 0;
+this.products.forEach(product => {
+totalPrice += product.price \* product.quantity;
+});
+return totalPrice;
+}
+}
+</code>
 
 // Feedback<br>
 Need an improvment addProduct method to check if the added item is an instance of the Product class before pushing it into the cart. Enhanced removeProduct method to remove a product based on its name and provided appropriate message.
@@ -100,7 +97,7 @@ Got the feedback -> Think the code process again -> change the logic of the code
 
 <p>The following is the package.json file that implementd mentiond package is used for CI/CD intergration </p>
 
-<p>
+<code>
 {
   "name": "second-for-u",
   "version": "1.0.0",
@@ -130,22 +127,20 @@ Got the feedback -> Think the code process again -> change the logic of the code
     ]
   }
 }
-</p>
+</code>
 
 <p>Whenever, I commit my project to git, it will perform teting, linting and others automatically.</p>
 
 <p>The following is the unit test, that will test automatically when we commit the project to git which is exists in __tests__ folder <p/>
 
-<p>
+<code>
 describe("First Test", () => {
   test("First Case", () => {
     expect(true).toBe(true);
   });
 });
-
 //This is just a simple unit test
-
-</p>
+</code>
 
 <p>In order to able to perform automaticaly we used husky precommit hook and configure it.</p>
 
