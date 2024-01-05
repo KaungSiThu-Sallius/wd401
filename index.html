@@ -7,11 +7,17 @@
 </head>
 
 <body>
-    <h1>Hello world!</h1>
-    <h2>Tip: Check your console</h2>
+    <h1>WD 401</h1>
+
+    <button id="load-hello-module">Load Hello Module</button>
+    <button id="load-world-module">Load World Module</button>
 
     <script src="src/index.js"></script>
-    <script type="import-map" src="import-map.json"></script>
+    <script type="module">
+        import dayjs from "https://cdn.skypack.dev/dayjs@1.10.7";
+
+        console.log(dayjs('2024-01-05').format('YYYY-MM-DD'));
+    </script>
 </body>
 
 
